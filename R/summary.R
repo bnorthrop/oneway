@@ -6,7 +6,7 @@
 #' @export
 #' @return object of type anova and data.frame
 #' @examples
-#' # mileage <- oneway(mpg ~ cyl, mtcars)
+#' mileage <- oneway(mpg ~ cyl, mtcars)
 #' summary(mileage)
 summary.oneway <- function(x) {
   if(!inherits(x, "oneway")){

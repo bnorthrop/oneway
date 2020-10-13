@@ -9,7 +9,7 @@
 #'
 #' @return the input object is returned silently
 #' @examples
-#' # mileage <- oneway(mpg ~ cyl, mtcars)
+#' mileage <- oneway(mpg ~ cyl, mtcars)
 #' print(mileage)
 print.oneway <- function(x, ...) {
   # Make sure object is of correct class

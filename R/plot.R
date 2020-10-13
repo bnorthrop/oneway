@@ -7,7 +7,7 @@
 #' @export
 #' @return NULL
 #' @examples
-#' # mileage <- oneway(mpg ~ cyl, mtcars)
+#' mileage <- oneway(mpg ~ cyl, mtcars)
 #' plot(mileage)
 plot.oneway <- function(x, ...) {
   # Make sure object is of correct class
