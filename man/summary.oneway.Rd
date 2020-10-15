@@ -16,6 +16,6 @@ object of type anova and data.frame
 summary.oneway summarizes the results of the one-way ANOVA
 }
 \examples{
-# mileage <- oneway(mpg ~ cyl, mtcars)
+mileage <- oneway(mpg ~ cyl, mtcars)
 summary(mileage)
 }

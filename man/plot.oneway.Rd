@@ -15,6 +15,6 @@
 plot.oneway creates group comparisons for a one-way ANOVA.
 }
 \examples{
-# mileage <- oneway(mpg ~ cyl, mtcars)
+mileage <- oneway(mpg ~ cyl, mtcars)
 plot(mileage)
 }
