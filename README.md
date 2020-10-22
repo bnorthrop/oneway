@@ -1,6 +1,9 @@
 
 # One-way Analysis of Variance
 
+![anova](graph pic.png)
+
+<br>
 This package assesses group differences using parametric
 one-way analysis of variance.
 

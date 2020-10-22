@@ -3,19 +3,40 @@
 #' plot.oneway creates group comparisons for a one-way ANOVA.
 #'
 #' @param x an object of class 'oneway'.
-#' @param ... additional arguments passed to boxplot function.
+#' @param ... additional arguments passed to geom_boxplot function.
+#'
+#' @import ggplot2
+#'
 #' @export
-#' @return NULL
+#' @return ggplot2 graph
 #' @examples
 #' mileage <- oneway(mpg ~ cyl, mtcars)
 #' plot(mileage)
+
+## Bozplot using GGPLOT2
 plot.oneway <- function(x, ...) {
-  # Make sure object is of correct class
   if(!inherits(x, "oneway")){
-    stop("Must be class 'oneway'")
-  }
-  boxplot(x$anova$terms, x$anova$model, ...)
+        stop("Must be class 'oneway'")
+      }
+
+  g <- as.character(x$anova$terms[[3]])
+  y <- as.character(x$anova$terms[[2]])
+  ggplot(x$anova$model, aes(x = factor(.data[[g]]), y = .data[[y]],
+                            fill = factor(.data[[g]]))) +
+    geom_boxplot() +
+    labs(x=g) +
+    theme(legend.position = "none")
 }
+
+
+## Boxplot using BASE R
+# plot.oneway <- function(x, ...) {
+#   # Make sure object is of correct class
+#   if(!inherits(x, "oneway")){
+#     stop("Must be class 'oneway'")
+#   }
+#   boxplot(x$anova$terms, x$anova$model, ...)
+# }
 
 
 
